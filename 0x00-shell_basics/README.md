@@ -34,4 +34,4 @@ The 100-lets_move script moves all the files beginning with an uppercase letter 
 
 The 101-clean_emacs script deletes all files in the current working directory that end with the ~ character
 
-The 102-tree script creates a welcome/to/school directory and the parents/ancestors if they don't exist
+The 102-tree script creates a welcome/to/school directory and the parents/ancestors if they don't exist.
