@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -AR -d */ | less | wc -l
+ls -AR | grep -e */ | wc -l
