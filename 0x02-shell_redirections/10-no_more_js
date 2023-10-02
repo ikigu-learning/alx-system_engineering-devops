@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -type f -name '*.js' | tr '\n' ' ' | rm 
+rm < find . -type f -name "*.js" | less | tr "\n" " "
