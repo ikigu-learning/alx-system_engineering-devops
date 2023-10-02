@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -A | less | wc -l
+ls -AR -d */ | less | wc -l
