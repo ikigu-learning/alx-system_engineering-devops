@@ -20,3 +20,8 @@
 13. Print lines that contain string "GET" in file named `access.log`.
 14. Print all files in the current directory, one per line (not the path, just the filename) that contain the string "500".
 15. Print the relative file paths, one path per line for all filenames that start with "access.log" in the current directory.
+16. Print all matching lines (without the filename or the file path) in all files under the current directory that start with "access.log" that contain the string "500".
+17. Extract all IP addresses from files that start with "access.log" printing one IP address per line.
+18. Count the number of files in the current working directory. Print the number of files as a single integer.
+
+## Tasks 19-27
