@@ -30,11 +30,16 @@
 20. Print the number of lines in `access.log` that contain the string "GET".
 21. The file `split-me.txt` contains a list of numbers separated by a ; character. Split the numbers on the ; character, one number per line.
 22. Print the numbers 1 to 100 separated by spaces.
-23. This challenge has text files (with a .txt extension) that contain the phrase "challenges are difficult". Delete this phrase from all text files recursively.
-
-Note that some files are in subdirectories so you will need to search for them.
-
+23. This challenge has text files (with a .txt extension) that contain the phrase "challenges are difficult". Delete this phrase from all text files recursively. Note that some files are in subdirectories so you will need to search for them.
 24. The file `sum-me.txt` has a list of numbers, one per line. Print the sum of these numbers.
 25. Print all files in the current directory recursively without the leading directory path.
 26. Rename all files removing the extension from them in the current directory recursively.
 27. The files in this challenge contain spaces. List all of the files (filenames only) in the current directory but replace all spaces with a '.' character.
+
+## SFTP Transfer Steps
+
+1. Copied the SFTP credentials from the sandbox.
+2. Pasted in the <user@remote_hostname> to my local machine's terminal.
+3. Keyed in the password when requested.
+4. Used `cd` to navigate to the directory where I wanted to upload the files.
+5. Then used `put *.png` to upload all the screenshots to the remote sandbox machine.
