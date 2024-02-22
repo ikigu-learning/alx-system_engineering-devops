@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+# Displays numbers 1-100
+#   Displays FizzBuzz when number is multiple of 3 and 5
+#   Displays Fizz when number is multiple of 3
+#   Displays Buzz when number is a multiple of 5
+#   Otherwise, displays the number
+#
+
+for NUMBER in {1..100}; do
+  if [ $((NUMBER % 3)) -eq 0 ]; then
+    echo -n "Fizz"
+  fi
+
+  if [ $((NUMBER % 5)) -eq 0 ]; then
+    echo -n "Buzz"
+  fi
+  
+  if [ $((NUMBER % 5)) -ne 0 ] && [ $((NUMBER % 3)) -ne 0 ]; then
+    echo -n "$NUMBER"
+  fi
+
+  echo ""
+done
