@@ -5,7 +5,7 @@
 for file in ./*; do
   
   if [ "$file" != ".*" ]; then
-    echo "$file" | cut -d '-' -f2-;
+    echo "$file" | cut -d '-' -f2;
   fi
 
 done
