@@ -4,7 +4,7 @@
 
 for file in ./*; do
   
-  if [[ "$file" == *-* ]] && [ "$file" != ".*" ]; then
+  if [ "$file" != ".*" ]; then
     echo "$file" | cut -d '-' -f2-;
   fi
 
