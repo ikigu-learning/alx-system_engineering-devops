@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 # Counts occurrences
 
-
-awk '{count [$1]++} END {for (word in count) print count[word], word, $9}' ./apache-access.log | sort -nr
+awk '{print $1, $9}' ./apache-access.log | sort | uniq -c | sort -nr
