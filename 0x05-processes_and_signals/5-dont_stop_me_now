@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Stops the 4-to_infinity_and_beyond process
 
-INF=$(pgrep -n bash)
+INF=$(pgrep -lf "./4-to_infinity_and_beyond" | cut -d ' ' -f1)
 kill -15 "$INF"
 
