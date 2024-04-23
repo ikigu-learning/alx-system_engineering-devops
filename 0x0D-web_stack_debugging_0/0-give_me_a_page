@@ -1,7 +1,3 @@
 #!/usr/bin/env bash
 # Debugs apache server
-
-sudo apt-get upgrade
-sudo apt-get install -y apache2
-echo 'Hello Holberton' | sudo tee /var/www/html/index.html
-sudo service apache2 restart
+sudo service apache2 start
