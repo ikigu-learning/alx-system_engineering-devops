@@ -17,5 +17,7 @@ sudo sed -i "s/server_name _;/$replacement_string/" /etc/nginx/sites-enabled/def
 error_replacement_string="server_name _;\n\n\terror_page 404 \/custom_404.html;\n\tlocation = \/custom_404.html {\n\t\troot \/usr\/share\/nginx\/html;\n\t\tinternal;\n\t}"
 sudo sed -i "s/server_name _;/$error_replacement_string/" /etc/nginx/sites-enabled/default
 
+echo "Ceci n'est pas une page" | sudo tee /usr/share/nginx/html/custom_404.html
+
 # Restart nginx
 sudo service nginx restart
