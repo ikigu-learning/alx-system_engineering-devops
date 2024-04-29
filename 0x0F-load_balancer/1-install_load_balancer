@@ -12,7 +12,7 @@ then
 fi
 
 # Edit the config file
-config="\
+config="
 defaults
 	mode http
 	timeout client 10s
@@ -30,7 +30,7 @@ backend webservers
 	server 531607-web-02 54.236.52.202:80
 "
 
-echo "$config" | sudo tee /etc/haproxy/haproxy.cfg
+echo "$config" | sudo tee -a /etc/haproxy/haproxy.cfg
 
 # Ensure haproxy can be managed by an init script
 echo "ENABLED=1" | sudo tee -a /etc/default/haproxy
