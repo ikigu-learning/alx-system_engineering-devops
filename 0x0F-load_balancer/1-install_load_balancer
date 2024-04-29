@@ -22,6 +22,7 @@ defaults
 
 frontend myfrontend
 	bind *:80
+	mode http
 	default_backend webservers
 
 backend webservers
