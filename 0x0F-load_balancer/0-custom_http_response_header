@@ -3,6 +3,6 @@
 
 host_name=$(hostname)
 search_text="listen \[\:\:\]\:80 default_server;"
-replacement_text="$search_text\n\n\tadd_header X-Served-By $host_name\n"
+replacement_text="$search_text\n\n\tadd_header X-Served-By $host_name;\n"
 sudo sed -i "s/$search_text/$replacement_text/" /etc/nginx/sites-enabled/default
 sudo service nginx restart
