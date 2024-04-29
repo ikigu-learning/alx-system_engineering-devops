@@ -27,8 +27,8 @@ frontend myfrontend
 
 backend webservers
 	balance roundrobin
-	server 531607-web-01 100.26.136.10:80
-	server 531607-web-02 54.236.52.202:80
+	server 531607-web-01 100.26.136.10:80 check
+	server 531607-web-02 54.236.52.202:80 check
 "
 
 echo "$config" | sudo tee -a /etc/haproxy/haproxy.cfg
