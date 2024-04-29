@@ -32,5 +32,8 @@ backend webservers
 
 echo "$config" | sudo tee /etc/haproxy/haproxy.cfg
 
-# Restart systemctl
-sudo systemctl restart haproxy
+# Ensure haproxy can be managed by an init script
+echo "ENABLED=1" | sudo tee -a /etc/default/haproxy
+
+# Restart haproxy
+sudo service haproxy restart
