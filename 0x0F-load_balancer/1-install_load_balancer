@@ -21,7 +21,7 @@ defaults
 	timeout http-request 10s
 
 frontend myfrontend
-	bind 0.0.0.0:80
+	bind *:80
 	default_backend webservers
 
 backend webservers
