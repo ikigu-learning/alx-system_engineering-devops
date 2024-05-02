@@ -10,24 +10,27 @@ then
 	exit 1;
 fi
 
-function get_needed_fields () {
+function print_dns_record () {
 	needed_fields=$(dig "$1$2" | grep -A1 "ANSWER SECTION:" | awk 'NR==2 {print $4, $5}')
+
 	record_type=$(echo $needed_fields | cut -d ' ' -f 1)
 	ip_address=$(echo $needed_fields | cut -d ' ' -f 2)
 
-	echo "The subdomain $1 is a $record_type record and points to $ip_address"
+	subdomain_without_dot=$(echo $1 | cut -d '.' -f 1)
+
+	echo "The subdomain $subdomain_without_dot is a $record_type record and points to $ip_address"
 }
 
 if [ "$subdomain" != "" ]
 then
 	subdomain="$subdomain."
-	get_needed_fields "$subdomain" "$domain"
+	print_dns_record "$subdomain" "$domain"
 else
-	subdomains=("www.", "lb-01.", "web-01.", "web-02.")
+	subdomains=("www." "lb-01." "web-01." "web-02.")
 
 	for subdomain in "${subdomains[@]}"
 	do
-		get_needed_fields "$subdomain" "$domain";
+		print_dns_record "$subdomain" "$domain";
 	done
 fi
 
