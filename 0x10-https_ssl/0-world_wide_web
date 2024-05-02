@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# Checks DNS records for passed domain and subdomain
+
+domain="$1"
+subdomain="$2"
+
+if [ "$domain" == "" ]
+then
+	echo "USAGE: domain subdomain"
+	exit 1;
+fi
+
+if [ "$subdomain" != "" ]
+then
+	subdomain="$subdomain."
+fi
+
+dig "$subdomain$domain" | grep -A1 "ANSWER SECTION:"
+
+# ip_address="$(dig \"$subdomain$domain\" | grep -A1 'ANSWER SECTION:' | awk '{print $5}')"
+
+# echo "$ip_address"
