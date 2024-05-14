@@ -3,5 +3,5 @@
 
 if [ "$1" != "" ]
 then
-	runuser -u "$1" -p whoami;
+	sudo -u "$1" whoami;
 fi
