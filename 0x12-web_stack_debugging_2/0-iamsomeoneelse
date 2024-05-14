@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
 # run the whoami command under the user passed as an argument
 
-runuser -u "$1" -p whoami
+if [ "$1" != "" ]
+then
+	runuser -u "$1" -p whoami;
+fi
