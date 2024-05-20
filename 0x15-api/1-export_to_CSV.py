@@ -32,7 +32,7 @@ def employee_todos_to_csv(id):
     if todos_response.status_code != 200:
         return
 
-    name = employee_response.json().get('name')
+    name = employee_response.json().get('username')
     todos = todos_response.json()
 
     csv_data = ""
