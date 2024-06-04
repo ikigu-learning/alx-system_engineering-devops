@@ -18,7 +18,7 @@ Requirements:
 """
 
 
-from requests import get, JSONDecodeError, ConnectionError
+from requests import get
 
 
 def number_of_subscribers(subreddit):
@@ -35,12 +35,9 @@ def number_of_subscribers(subreddit):
     if subreddit is None or not isinstance(subreddit, str):
         return 0
 
-    try:
-        response = get(
-            'https://www.reddit.com/r/{}/about.json'.format(subreddit),
-            allow_redirects=False)
-    except ConnectionError:
-        return 0
+    response = get(
+        'https://www.reddit.com/r/{}/about.json'.format(subreddit),
+        allow_redirects=False)
 
     if response.ok:
         try:
