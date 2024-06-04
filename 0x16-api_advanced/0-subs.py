@@ -37,7 +37,7 @@ def number_of_subscribers(subreddit):
 
     response = get(
         'https://www.reddit.com/r/{}/about.json'.format(subreddit),
-        allow_redirects=False)
+    )
 
     if response.ok:
         try:
