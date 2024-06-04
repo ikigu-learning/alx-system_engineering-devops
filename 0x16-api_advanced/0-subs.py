@@ -13,12 +13,12 @@ ensure you’re setting a custom User-Agent.
 Requirements:
     - Prototype: def number_of_subscribers(subreddit)
     - If not a valid subreddit, return 0.
-    - NOTE: Invalid subreddits may return a redirect to search results.
+    - Note: Invalid subreddits may return a redirect to search results.
       Ensure that you are not following redirects.
 """
 
 
-from requests import get, JSONDecodeError
+from requests import get, JSONDecodeError, ConnectionError
 
 
 def number_of_subscribers(subreddit):
@@ -32,16 +32,20 @@ def number_of_subscribers(subreddit):
         The number of subscribers if the subreddit exists, 0 otherwise
     """
 
-    if subreddit is None:
+    if subreddit is None or not isinstance(subreddit, str):
         return 0
-
-    response = get(
-        'https://www.reddit.com/r/{}/about.json'.format(subreddit),
-        allow_redirects=False)
 
     try:
-        subscriber_count = response.json().get('data').get('subscribers')
-    except JSONDecodeError:
+        response = get(
+            'https://www.reddit.com/r/{}/about.json'.format(subreddit),
+            allow_redirects=False)
+    except ConnectionError:
         return 0
+
+    if response.ok:
+        try:
+            subscriber_count = response.json().get('data').get('subscribers')
+        except Exception:
+            return 0
 
     return subscriber_count
