@@ -28,7 +28,7 @@ def top_ten(subreddit):
     """
 
     if subreddit is None:
-        return print(None)
+        return print("None")
 
     api_endpoint = 'https://reddit.com/r/{}/hot.json'.format(
         subreddit)
@@ -36,7 +36,7 @@ def top_ten(subreddit):
     response = get(api_endpoint, params={'limit': 10})
 
     if response.ok is False:
-        return
+        return print("None")
 
     posts = response.json()
 
