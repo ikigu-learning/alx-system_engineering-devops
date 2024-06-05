@@ -1,6 +1,7 @@
+# Fixes an Apache server
+
 $file_to_edit = '/var/www/html/wp-settings.php'
 
-# Create a temporary backup to ensure rollback in case of errors
 file { "/var/www/html/wp-settings.php.bak":
   ensure => present,
   source => "/var/www/html/wp-settings.php",
